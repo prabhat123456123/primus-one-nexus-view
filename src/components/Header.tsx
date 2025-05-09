@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Logo } from "./Logo";
-import { Bell, User, Settings } from "lucide-react";
+import { Bell, User, Settings, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,7 +15,12 @@ import {
 export function Header() {
   return (
     <header className="bg-white border-b border-border h-16 px-4 flex items-center justify-between">
-      <Logo />
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu className="h-5 w-5" />
+        </Button>
+        <Logo />
+      </div>
       
       <div className="flex items-center gap-2">
         <Button variant="ghost" size="icon" className="text-muted-foreground">

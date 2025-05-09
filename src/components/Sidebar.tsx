@@ -44,6 +44,15 @@ export function Sidebar() {
   const [collapsed, setCollapsed] = React.useState(false);
   const [active, setActive] = React.useState("dashboard");
 
+  // Function to change section and dispatch custom event
+  const changeSection = (section: string) => {
+    setActive(section);
+    
+    // Dispatch custom event for Index.tsx to listen to
+    const event = new CustomEvent("section-change", { detail: section });
+    window.dispatchEvent(event);
+  };
+
   return (
     <div 
       className={cn(
@@ -67,44 +76,44 @@ export function Sidebar() {
               icon={LayoutDashboard} 
               label="Dashboard" 
               active={active === "dashboard"} 
-              onClick={() => setActive("dashboard")}
+              onClick={() => changeSection("dashboard")}
             />
             <NavItem 
               icon={Upload} 
               label="Data Ingestion" 
               active={active === "ingestion"}
-              onClick={() => setActive("ingestion")}
+              onClick={() => changeSection("ingestion")}
             />
             <NavItem 
               icon={Settings} 
               label="Match Configuration" 
               active={active === "config"}
-              onClick={() => setActive("config")}
+              onClick={() => changeSection("config")}
             />
             <NavItem 
               icon={Users} 
               label="Entity Grouping" 
               active={active === "entity"}
-              onClick={() => setActive("entity")}
+              onClick={() => changeSection("entity")}
             />
             <NavItem 
               icon={Database} 
               label="Explainability" 
               active={active === "explain"}
-              onClick={() => setActive("explain")}
+              onClick={() => changeSection("explain")}
             />
             <NavItem 
               icon={Network} 
               label="Visualization" 
               active={active === "visual"}
-              onClick={() => setActive("visual")}
+              onClick={() => changeSection("visual")}
             />
             <Separator className="my-4 bg-sidebar-border" />
             <NavItem 
               icon={Lock} 
               label="Security & Access" 
               active={active === "security"}
-              onClick={() => setActive("security")}
+              onClick={() => changeSection("security")}
             />
           </>
         ) : (
@@ -117,7 +126,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "dashboard" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("dashboard")}
+                onClick={() => changeSection("dashboard")}
               >
                 <LayoutDashboard className="h-5 w-5" />
               </Button>
@@ -128,7 +137,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "ingestion" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("ingestion")}
+                onClick={() => changeSection("ingestion")}
               >
                 <Upload className="h-5 w-5" />
               </Button>
@@ -139,7 +148,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "config" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("config")}
+                onClick={() => changeSection("config")}
               >
                 <Settings className="h-5 w-5" />
               </Button>
@@ -150,7 +159,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "entity" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("entity")}
+                onClick={() => changeSection("entity")}
               >
                 <Users className="h-5 w-5" />
               </Button>
@@ -161,7 +170,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "explain" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("explain")}
+                onClick={() => changeSection("explain")}
               >
                 <Database className="h-5 w-5" />
               </Button>
@@ -172,7 +181,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "visual" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("visual")}
+                onClick={() => changeSection("visual")}
               >
                 <Network className="h-5 w-5" />
               </Button>
@@ -184,7 +193,7 @@ export function Sidebar() {
                   "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground",
                   active === "security" && "bg-sidebar-accent text-sidebar-accent-foreground"
                 )}
-                onClick={() => setActive("security")}
+                onClick={() => changeSection("security")}
               >
                 <Lock className="h-5 w-5" />
               </Button>

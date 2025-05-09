@@ -48,7 +48,7 @@ function EntityCard({ entity, isGolden = false }) {
           </div>
           {isGolden && (
             <Badge className="bg-primus-gold text-primus-brown-dark hover:bg-primus-gold/80">
-              PRIMUS ONE ER Record
+              PRIMUS ER Record
             </Badge>
           )}
         </div>
@@ -206,7 +206,7 @@ export function EntityGrouping() {
   return (
     <div className="p-6 space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-3xl font-bold text-primus-brown-dark">Entity Grouping & PRIMUS ONE ER Records</h2>
+        <h2 className="text-3xl font-bold text-primus-brown-dark">Entity Grouping & PRIMUS ER Records</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -308,14 +308,14 @@ export function EntityGrouping() {
 
       <Tabs defaultValue="golden-records" className="space-y-6">
         <TabsList>
-          <TabsTrigger value="golden-records">PRIMUS ONE ER Records</TabsTrigger>
+          <TabsTrigger value="golden-records">PRIMUS ER Records</TabsTrigger>
           <TabsTrigger value="audit-trail">Audit Trail</TabsTrigger>
         </TabsList>
         
         <TabsContent value="golden-records">
           <Card>
             <CardHeader>
-              <CardTitle>PRIMUS ONE ER Records</CardTitle>
+              <CardTitle>PRIMUS ER Records</CardTitle>
               <CardDescription>
                 Master records created from entity resolution
               </CardDescription>
@@ -373,7 +373,7 @@ export function EntityGrouping() {
             </CardContent>
             <CardFooter className="flex justify-between">
               <div className="text-sm text-muted-foreground">
-                Showing 5 of 3,028 PRIMUS ONE ER records
+                Showing 5 of 3,028 PRIMUS ER records
               </div>
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" disabled>
@@ -390,9 +390,9 @@ export function EntityGrouping() {
         <TabsContent value="audit-trail">
           <Card>
             <CardHeader>
-              <CardTitle>PRIMUS ONE ER Record Audit Trail</CardTitle>
+              <CardTitle>PRIMUS ER Record Audit Trail</CardTitle>
               <CardDescription>
-                Track changes and merges to PRIMUS ONE ER records
+                Track changes and merges to PRIMUS ER records
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -400,7 +400,7 @@ export function EntityGrouping() {
                 <div className="border-l-2 border-muted pl-4 py-2 relative">
                   <div className="absolute w-3 h-3 bg-primus-gold rounded-full -left-[6.5px] top-3"></div>
                   <div className="space-y-1">
-                    <p className="text-sm font-medium">PRIMUS ONE ER Record GR-73502 Created</p>
+                    <p className="text-sm font-medium">PRIMUS ER Record GR-73502 Created</p>
                     <p className="text-xs text-muted-foreground">Today, 10:23 AM • By System</p>
                     <p className="text-sm mt-2">
                       Created from 3 source records with high confidence (92%)
